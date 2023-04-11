@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Primer Párrafo</h1>
+        <h2>Segundo Párrafo</h2>
+        <h3>Grupo de elementos de navegación</h3>
+        <ul>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
+            <li><a href="https://www.youtube.com/">YouTube</a></li>
+        </ul>
+
+        <hr>
+        <nav>
+            <a href="ejer01OtraPaginaEnMismaVentana.html">Enlace a otra página dentro de la misma pestaña</a>
+            <a href="ejer01OtraPaginaEnNuevaVentana.html" target="_blank">Enlace a otra página en una nueva pestaña</a>
+            <a href="#ancla">Ancla a otro punto de esta página</a>
+        </nav>
+        <hr>
+
+        <main>
+            <h2>Preguntas:</h2>
+            <h3>1- Ejemplo de uso de etiquetas Meta</h3>
+            <p>Las etiquetas Meta se utilizan para metadatos, que son datos relacionados al documento 
+                pero que no son visualizados en la presentación del mismo. <br>
+                En estas etiquetas se puede indicar el formato de codificación de los caracteres de la página, 
+                el comportamiento de la página según el tamaño del dispositivo, la descripción de la página o su categoría para un mejor posicionamiento, entre otras.
+            </p>
+            <h3>2- Atributos aplicables a la etiqueta HTML</h3>
+            <ul>
+                <li>lang: Define el idioma principal del documento</li>
+                <li>dir: Especifica la dirección del texto</li>
+                <li>title: Brinda información adicional al usuario cuando deja mantenido el cursor sobre la página</li>
+                <li>Atributos aplicables al resto de las etiquetas, como <b>style, id, class</b></li>
+            </ul>
+            <h3>3- ¿Cómo se relaciona un header HTTP con la etiqueta Head de HTML?</h3>
+            <p>
+                Debido a que no se pueden enviar headers HTTP desde un HTML, en una etiqueta <b>meta</b> se escribe un dato que le dice al navegador
+                los headers HTTP que se van a utilizar. <br><b>Http-equiv</b> (equiv = equivalente) es el atributo que me premite hacer referencia a un header HTTP; estoy dando desde HTML un dato que normalmente va en el HTTP.
+            </p>
+            <h3>4- ¿Qué es UTF8?</h3>
+            <p>
+                UTF 8 es un formato de codificación de caracteres que tiene la capacidad de representar cualquier caracter Unicode.
+                En el caso de páginas en español latino, este formato de codificación permite el uso de tildes y la letra ñ sin la aparición 
+                de caracteres no deseados en el documento.
+            </p>
+            <h3>5- ¿Qué atributo HTML sirve para aplicar estilo y a qué etiqueta es aplicable?</h3>
+            <p>
+                El atributo <b>style</b> sirve para aplicar estilo al documento (color, tamaños de fuente, tamaño de imágenes, etc.), y es aplicable a todas las etiquetas
+                que contengan elementos o datos que podrán ser visualizados de alguna forma en el documento. 
+            </p>
+            <h3>6- ¿Dónde se indica que un enlace debe ubicar el documento en una nueva pestaña?</h3>
+            <p>
+                Con el valor "<b>_blank</b>" en el atributo <b>target</b> de la etiqueta "<b>a</b>" se indica que un link deberá ser abierto en una pestaña nueva.
+            </p>
+            <h3>7- Explicar cuándo se usarían etiquetas semánticas y con qué propósito</h3>
+            <p>
+                Las etiquetas semánticas se utilizan para la optimización del sitio para los motores de búsqueda. 
+                Sirven para enmarcar o estructurar semánticamente el contenido del html dentro del body.
+                La utilización de las etiquetas semánticas generalmente responde a formas estandarizadas de presentar el contenido de una página, 
+                como por ejemplo la etiqueta <b>footer</b> suele contener información como direcciones, números de documento, contacto, 
+                la etiqueta <b>main</b> indica dónde está la información más relevante del documento, la etiqueta <b>section</b> permite dividir
+                en secciones los distintos tipos de contenido del documento, etc. El contenido que haya dentro de cada etiqueta semántica
+                permite que una página tenga una posición más relevante a la hora de filtrar contenido específico en un buscador. 
+            </p>
+            <h3>8- ¿Qué atributos de estilo básicos aplicarían a una tabla? Explicar</h3>
+            <p>
+                Los atributos de estilo básicos aplicables a una tabla son:
+                <ul>
+                    <li>border: Modifico el tipo de borde de una tabla (sólidos, punteados, de guiones, etc.)</li>
+                    <li>border-collapse: Los bordes de las celdas "colapsan", se combinan en uno solo</li>
+                    <li>width: Indica el ancho de la tabla</li>
+                    <li>height: Indica el alto de la tabla</li>
+                    <li>background-color: Indica el color de fondo de la tabla</li>
+                </ul>
+            </p>
+            <h3>9- ¿Qué diferencia existe entre la etiqueta body de un documento HTML y el body del protocolo HTTP?</h3>
+            <p>
+                La etiqueta body se encuentra dentro del HTML y engloba al contenido principal donde se encontrarán el resto
+                de las etiquetas que harán a la forma y disposición del documento HTML. En cambio, el body del protocolo HTTP 
+                contiene datos relacionados a peticiones de HTTP, que no tienen relación con el lenguaje HTML. 
+                Dentro del body de una respuesta HTTP se puede encontrar el archivo HTML donde está el body con el contenido del documento, 
+                pero más allá de eso, nada tienen que ver uno con el otro.
+            </p>
+            <h3>10- ¿Qué atributos marcan la agrupación de celdas de una tabla? ¿A qué etiquetas se aplican?</h3>
+            <p>
+                El atributo <b>colspan</b> me permite indicar cuántas celdas se van a querer agrupar horizontalmente, y el atributo
+                <b>rowspan</b> indica cuántas celdas se van a agrupar verticalmente. Ambas se aplican a las etiquetas <b>td</b>.
+            </p>
+        </main>
+
+        <hr>
+
+        <section>
+            <h2>Seccion de imágenes</h2>
+            <h3>Imagen con dimensiones originales</h3>
+            <img src="charly.jpeg" alt="Charly García">
+            <h3>Imágenes deformadas</h3>
+            <p>Para un mismo atributo height, se cambia en cada imagen el atributo width</p>
+            <img src="charly.jpeg" alt="Charly García" style="height: 300px;width: 20vw;">
+            <img src="charly.jpeg" alt="Charly García" style="height: 300px;width: 30vw;">
+            <img src="charly.jpeg" alt="Charly García" style="height: 300px;width: 45vw;">
+
+        </section>
+        <hr>
+        <section>
+            <h2>Sección de video</h2>
+            <video src="messi.mp4" controls></video>
+        </section>
+
+        <section>
+            <h2>Anclaje</h2>
+            <p id="ancla">Punto de anclaje</p>
+        </section>
+        <hr>
+        <footer>
+            <h2>Datos</h2>
+            <i>
+                <p>Manuel Emiliano Pedro</p>
+                <p><a href="mailto:manuel.em.pedro@gmail.com">manuel.em.pedro@gmail.com</a></p>
+                <p>Legajo: 15-27823</p>
+                <p>Turno noche</p>
+            </i>
+
+        </footer>
+
+    </body>
+</html>
