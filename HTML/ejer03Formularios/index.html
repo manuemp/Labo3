@@ -90,11 +90,11 @@
         </li>
         <li style="margin-top: 10px;">
             <label style="font-weight: bold;" for="numeroEntero">Numero entero limitado (variación por tipo numérico y cotas):</label><br/>
-            <input type="number" min="1" max="5" id="numeroEntero" name="numeroEntero" >
+            <input type="number" min="1" max="5" id="numeroEntero" name="numeroEntero"  required>
         </li>
         <li style="margin-top: 10px;">
             <label style="font-weight: bold;" for="numeroReal">Numero decimal:</label><br/>
-            <input type="number" id="numeroReal" name="numeroReal" step="0.1" min="0" max="9">
+            <input type="number" id="numeroReal" name="numeroReal" step="0.1" min="0" max="9" required>
         </li>
         <li style="margin-top: 10px;">
             <label style="font-weight: bold;" for="sitio">URL (validación por requerido, escribir http://)</label><br/>
@@ -106,7 +106,7 @@
         </li>
         <li style="margin-top: 10px;">
             <label style="font-weight: bold;" for="mascara2">Pattern de validación</label><br/>
-            <input type="text" id="mascara2" name="mascara2" pattern="\(54\) 11 [0-9]{8}" required title="(54) 11 XXXXXXXX" placeholder="(54) 11 44445555">
+            <input type="text" id="mascara2" name="mascara2" pattern="\(+54\) 11 [0-9]{8}" required title="(54) 11 XXXXXXXX" placeholder="(54) 11 44445555">
         </li>
 
         <li style="margin-top: 10px;">
