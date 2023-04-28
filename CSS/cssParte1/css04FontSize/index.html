@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Size</title>
+    <style>
+        *{
+            font-size: 12px;
+        }
+        
+        .colorResponsive
+        {
+            background-color: lightgray;
+        }
+
+        h1
+        {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        @media (min-width: 800px) and (max-width: 1080px) {
+            .colorResponsive
+            {
+                background-color: lightyellow;
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 800px)
+        {
+            .colorResponsive
+            {
+                background-color: lightblue;
+                font-size: 3em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1 class="colorResponsive">Tamaño de los Fonts</h1>
+
+    <p class="colorResponsive">Los textos marcados con "H1" tendrán dimensión doble a los párrafos comunes. Corresponderían a títulos</p>
+    <p class="colorResponsive">En el ejercicio se definirá un tamaño de letra default para el body y luego todo será expresado en unidades em (unidad de referencia)</p>
+    <p class="colorResponsive">En este ejercicio se trabajará con el control de media @media() para que el tamaño de la letra sea modificado según el tamaño del viewport </p>
+    <p class="colorResponsive">Dispositivos móviles de alta resolución tienen una definición mayor a: 300ppi (Pixeles/pulgada)</p>
+    <p class="colorResponsive">Dispositivos móbiles de baja resolución tienen una definición menor en el orden de los 100ppi (Pixeles/pulgada)</p>
+    <p class="colorResponsive">Dispositivos de pantalla grande tienen una definición en el orden de los 60ppi (Pixeles/pulgada)</p>
+    <p class="colorResponsive">En un móvil de alta resolución estaría viendo las letras de 3 a 5 veces más chicas que en una pantalla grande si su tamaño es fijo en píxeles</p>
+    <p class="colorResponsive">Por este motivo es que si no uso el control de medio, será más conveniente definir el tamaño de letra considerando el peor de los casos (los dispositivos de alta resolución)</p>
+    <p class="colorResponsive">En este ejercicio hago crecer la letra conforme el dispositivo es más pequeño, siempre suponiendo que estos tienen mayor resolución</p>
+    <p class="colorResponsive">12px (1em) para dispositivos mayores a 1080px. No olvidar definir el tamaño default en 12px</p>
+    <p class="colorResponsive">24px (2em) para dispositivos entre 800px y 1080px</p>
+    <p class="colorResponsive">36px (3em) para dispositivos menores a 800px</p>
+
+</body>
+</html>

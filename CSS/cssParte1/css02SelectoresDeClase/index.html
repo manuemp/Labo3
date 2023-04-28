@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores de Clase</title>
+    <style>
+        body{
+            font-size: 18px;
+        }
+        .claseResaltado{
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        p{
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            display:block;
+        }
+
+        .claseAcotacion{
+            font-size: 0.7em;
+            border: 1px solid blue;
+            color: blue;
+            padding: 10px;
+            font-style: italic;
+        }
+
+        .claseAyuda{
+            font-style: italic;
+            color: gold;
+            border: 1px solid yellow;
+            display: block;
+            width: 40%;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        #idUnico{
+            color: red;
+            font-style: italic;
+            font-size: 1em;
+            display: block;
+            width: 20%;
+            font-weight: bold;
+            border:1px solid red;
+            text-align: center;
+        }
+
+        .imagenAl50{
+            max-width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>A partir de esta página no usaremos más el atributo style en ninguna etiqueta</h1>
+    <h1>Todo el estilo será definido dentro de una etiqueta style como "clase", anidad en la etiqueta head del documento</h1>
+    <h1>Todos los párrafos tiene un default como estilo que incluyen un margin-bottom para separarlos más entre ellos</h1>
+
+    <p>Este párrafo contiene un grupo de palabras delimitado por una etiqueta "span". El comienzo es aquí:<span class="claseResaltado">grupo de palabras destacadas con el estilo claseResaltado</span> lorem ipsum dolor sit amet</p>
+    
+    <p class="claseAcotacion">Este párrafo toma el estilo definido en la etiqueta style en el header del documento como class="claseAcotacion" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, eum dolorem inventore mollitia.</p>
+
+    <p class="claseResaltado">Este párrafo toma el estilo definido en la etiqueta style en el header del documento como class="claseResaltado"</p>
+
+    <p class="claseAyuda">Este párrafo toma el estilo definido en la etiqueta style en el header del documento como class="claseAyuda"</p>
+
+    <p>Este párrafo toma el estilo definido en la etiqueta style en el header del documento como class="claseContenidoComun"</p>
+
+    <p id="idUnico">Párrafo formateado por un estilo particular definido en el style del documento para un párrafo específico id="idUnico". No se trata de un selector de clase sino de un selector de elemento "#"</p>
+
+    <h1>Todas las imágenes con class="ImagenAl50" en esta página se encuentran limitadas al 50% del ancho del contenedor mas allá de su tamaño real en pixeles</h1>
+
+    <img src="./paul.jpeg" alt="Paul McCartney">
+
+</body>
+</html>
