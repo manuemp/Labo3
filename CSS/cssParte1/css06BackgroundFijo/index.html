@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Fijo</title>
+    <style>
+        .contenedor
+        {
+            padding: 20px;
+            width: 50%;
+            border: 1px solid black;
+            margin: auto;
+            background-color: lightgray;
+
+        }
+        .caja
+        {
+            height: 300px;
+            overflow: auto;
+            font-size: 30px;
+            width: 70%;
+            border-radius: 20px 0 0 0;
+            background-image: url('./darksideofthemoon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: black;
+            border: 2px solid red;
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="caja">
+            El padding es importante para que el texto no quede pegado al borde. <br>
+            No olvidar usar el box-sizing: border-box para que la dimensión de la caja sea exactamente la definida en el width. <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tenetur cumque ea hic exercitationem a voluptas, voluptate repudiandae doloribus, magni aliquam praesentium error dolorem suscipit alias deleniti laboriosam nisi ipsa?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, exercitationem blanditiis sint nostrum libero dignissimos eaque nobis ea, pariatur, laboriosam consectetur temporibus vel laudantium nam neque nihil itaque id architecto!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, rerum dolore veritatis vero officia eaque odit voluptas eos hic obcaecati, a exercitationem, iusto mollitia consectetur soluta harum nisi aperiam? Hic.
+        </div>
+    </div>
+</body>
+</html>
