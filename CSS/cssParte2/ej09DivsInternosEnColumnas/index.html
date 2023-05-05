@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs Internos en Columnas</title>
+    <style>
+        html, body
+        {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .contenedor
+        {
+            width: 90%;
+            background-color: rgb(250, 158, 176);
+            margin-left: 5%;
+            float: left;
+            display: block;
+        }
+
+        .columna
+        {
+            width: 220px;
+            height: auto;
+            background-color: crimson;
+            padding: 40px;
+            float: left;
+            margin: 5px;
+            box-sizing: border-box;
+        }
+
+        .columna img
+        {
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+            display: block;
+        }
+
+        @media (max-width: 511px)
+        {
+            .columna
+            {
+                background-color: gold;
+            }
+
+            .contenedor
+            {
+                background-color: lightyellow;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <b>Encolumnado sin tablas</b> <br>
+        <div class="columna">
+            Articulo 1. Datos para incluir en esta columna. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, dolor neque? Officiis voluptas, at nam, totam eius culpa cupiditate corrupti sequi itaque blanditiis, obcaecati dolorem a voluptates. La siguiente imagen queda marginada automáticamente y ocupa el máximo ancho posible dentro de la columna independientemente del ancho real de la foto. Obviamente el tamaño real debería ser mayor que el máximo posible previsto en el mejor de los casos (monitor de alta resolución).
+            <img src="./yaguarete.jpeg" alt="Yaguareté">
+        </div>
+        <div class="columna">Articulo 2. Datos para incluir en esta columna. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia laboriosam suscipit illo quis beatae nostrum fugiat voluptates, iure, quo quaerat minus facilis aspernatur, asperiores maxime fuga minima odit. Expedita, molestiae facilis aspernatur, asperiores maxime totam eius culpa cupiditate corrupti quis beatae nostrum fugiat voluptates</div> 
+        <div class="columna">Articulo 3. Datos para inlcuir en esta columna. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem asperiores, sint distinctio quis quae earum eveniet odit qui</div>
+        <div class="columna">Articulo 4. Datos para inlcuir en esta columna. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem asperiores, sint distinctio quis quae earum eveniet odit qui</div>
+        <div class="columna">Articulo 5. Datos para inlcuir en esta columna. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem asperiores, sint distinctio quis quae earum eveniet odit qui</div>
+        <div class="columna">Artículo 6. Datos para incluir en esta columna. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates dicta velit ullam sint necessitatibus impedit, facere eveniet nihil. Inventore fugit
+            <img src="./yaguarete2.jpeg" alt="Yaguareté">
+        </div>
+        <div class="columna">Articulo 7. Datos para inlcuir en esta columna. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem asperiores, sint distinctio quis quae earum eveniet odit qui</div>
+        <div class="columna">Articulo 8. Datos para inlcuir en esta columna. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem asperiores, sint distinctio quis quae earum eveniet odit qui</div>
+    </div>
+</body>
+</html>

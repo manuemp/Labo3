@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores de Evento</title>
+    <style>
+
+        html, body
+        {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contenedor
+        {
+            display: block;
+            margin: auto;
+            width: 90%;
+            height: 100%;
+            background-color:lavender;
+        }
+
+        .boton
+        {
+            height: 50px;
+            width: 180px;
+            background-color: rgb(187, 187, 253);
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+            float: left;
+            display: block;
+            text-decoration: none;
+        }
+
+        .boton:hover
+        {
+            background-color: dodgerblue;
+            color: white;
+            cursor: pointer;
+        }
+
+        .boton:active
+        {
+            background-color: navy;
+        }
+
+        #inputs
+        {
+            display: block;
+            clear:both;
+        }
+
+        input
+        {
+            display: block;
+        }
+
+        input:focus
+        {
+            background-color: rgb(187, 187, 253);;
+        }
+
+        .contenedorImagen
+        {
+            width: 150px;
+            height: 150px;
+            float: left;
+            border: 1px solid #333;
+        }
+
+        .imagen
+        {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+
+        .contenedorImagen:active 
+        {
+            width: 50%;
+            height: auto;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div>
+            <a class="boton" href="./respuesta1.html">Opcion 1</a>
+            <a class="boton" href="./respuesta2.html">Opcion 2</a>
+            <a class="boton" href="./respuesta3.html">Opcion 3</a>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div id="inputs">
+            <label for="apellido" >Apellido:</label>
+            <input id="apellido" name="apellido" type="text" autocomplete="off"><br>
+            <label for="nombre" >Nombres:</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="off">
+        </div>
+
+        <br>
+
+        <h1>Expandir la imagen al 50% del contenedor padre con un click</h1>
+        <div class="contenedorImagen"><img class="imagen" src="./maradona.jpeg" alt="Maradona"></div>
+        <div class="contenedorImagen"><img class="imagen" src="./messi.webp" alt="Messi"></div>
+        <div class="contenedorImagen"><img class="imagen" src="./riquelme.jpeg" alt="Riquelme"></div>
+        <div class="contenedorImagen"><img class="imagen" src="./ibra.jpeg" alt="Ronaldinho"></div>
+        
+
+    </div>
+</body>
+</html>

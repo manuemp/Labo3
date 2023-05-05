@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas RWD</title>
+    <style>
+
+        html, body
+        {
+            width: 100vw;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        table
+        {
+            display: block;
+            height: 80%;
+            width: 100vw;
+            border-collapse: collapse;
+            overflow: auto;
+        }
+
+        header, footer
+        {
+            font-weight: bold;
+            background-color: #333;
+            height: 10%;
+            width: 100%;
+            color: white;
+            padding: 30px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        footer
+        {
+            position: fixed;
+            bottom:0;
+            left:0;
+        }
+
+        th
+        {
+            text-align: center;
+            background-color: bisque;
+            padding: 10px 10px 25px 10px;
+            box-sizing: border-box;
+            border-right: 2px solid orange;
+        }
+
+        [campo-dato = "id"]
+        {
+            width: 5vw;
+        }
+
+        [campo-dato = "nick"]
+        {
+            width: 10vw;
+        }
+
+        [campo-dato = "mail"]
+        {
+            width: 25vw;
+        }
+        
+        [campo-dato = "web"]
+        {
+            width: 30vw;
+            color: darkslateblue;
+            font-weight: bold;
+        }
+
+        [campo-dato = "twitter"]
+        {
+            width: 20%;
+        }
+
+        [campo-dato = "skype"]
+        {
+            width: 15vw;
+        }
+
+        tbody tr:nth-child(odd)
+        {
+            background-color: lavender;
+        }
+
+        tbody tr:nth-child(even)
+        {
+            background-color: rgb(203, 203, 251);
+        }
+
+        td
+        {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 1200px)
+        {
+            [campo-dato = "skype"]
+            {
+                display: none;
+            }
+
+            [campo-dato = "twitter"]
+            {
+                width: 35vw;
+            }
+        }
+
+        @media (max-width: 900px)
+        {
+            [campo-dato = "twitter"]
+            {
+                display: none;
+            }
+
+            [campo-dato = "web"]
+            {
+                width: 60vw;
+            }
+        }
+
+        @media (max-width: 600px)
+        {
+            [campo-dato = "web"]
+            {
+                display: none;
+            }
+
+            [campo-dato = "mail"]
+            {
+                width: 85vw;
+            }
+        }
+ 
+    </style>
+</head>
+<body>
+    <header>RWD (Responsive Web Design) Table</header>
+    <table>
+        <thead>
+            <th campo-dato="id">Id</th>
+            <th campo-dato="nick">Nick</th>
+            <th campo-dato="mail">Mail</th>
+            <th campo-dato="web">Web</th>
+            <th campo-dato="twitter">Twitter</th>
+            <th campo-dato="skype">Skype</th>
+        </thead>
+        <tr>
+            <td campo-dato="id">1</td>
+            <td campo-dato="nick">Manu</td>
+            <td campo-dato="mail">manu@gmail.com</td>
+            <td campo-dato="web">manu-webpage.com</td>
+            <td campo-dato="twitter">@mp20</td>
+            <td campo-dato="skype">manu@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">2</td>
+            <td campo-dato="nick">Fulano</td>
+            <td campo-dato="mail">ful@gmail.com</td>
+            <td campo-dato="web">fulano.com</td>
+            <td campo-dato="twitter">@fulanito</td>
+            <td campo-dato="skype">ful@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">3</td>
+            <td campo-dato="nick">Rorro</td>
+            <td campo-dato="mail">rodrigo@gmail.com</td>
+            <td campo-dato="web">soyrodrigo.org</td>
+            <td campo-dato="twitter">@rorro</td>
+            <td campo-dato="skype">rodrigo@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">4</td>
+            <td campo-dato="nick">Figo</td>
+            <td campo-dato="mail">luisfilipe@gmail.com</td>
+            <td campo-dato="web">figo.org</td>
+            <td campo-dato="twitter">@figo10</td>
+            <td campo-dato="skype">luisfilipe@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">5</td>
+            <td campo-dato="nick">Zizou</td>
+            <td campo-dato="mail">zinedine@gmail.com</td>
+            <td campo-dato="web">zidane.com</td>
+            <td campo-dato="twitter">@zizou10</td>
+            <td campo-dato="skype">zinedine@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">6</td>
+            <td campo-dato="nick">Lio</td>
+            <td campo-dato="mail">messi@gmail.com</td>
+            <td campo-dato="web">messi.org</td>
+            <td campo-dato="twitter">@liomessi</td>
+            <td campo-dato="skype">messi@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">7</td>
+            <td campo-dato="nick">Macca</td>
+            <td campo-dato="mail">mccartney@gmail.com</td>
+            <td campo-dato="web">paulmccartney.org</td>
+            <td campo-dato="twitter">@sirPaul</td>
+            <td campo-dato="skype">mccartney@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">8</td>
+            <td campo-dato="nick">Flaco</td>
+            <td campo-dato="mail">spinetta@gmail.com</td>
+            <td campo-dato="web">luisalbertospinetta.com</td>
+            <td campo-dato="twitter">@elflaco</td>
+            <td campo-dato="skype">luisalbertospinetta@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">9</td>
+            <td campo-dato="nick">Charles</td>
+            <td campo-dato="mail">saynomore@gmail.com</td>
+            <td campo-dato="web">charlygarcia.com.ar</td>
+            <td campo-dato="twitter">@charlygarcia</td>
+            <td campo-dato="skype">saynomore@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">10</td>
+            <td campo-dato="nick">Peter</td>
+            <td campo-dato="mail">diegocapusotto@gmail.com</td>
+            <td campo-dato="web">petercapusotto.org</td>
+            <td campo-dato="twitter">@capusotto_ok</td>
+            <td campo-dato="skype">diegocapusotto@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">11</td>
+            <td campo-dato="nick">Indio</td>
+            <td campo-dato="mail">carlossolari@gmail.com</td>
+            <td campo-dato="web">indiosolari.org</td>
+            <td campo-dato="twitter">@virumancia</td>
+            <td campo-dato="skype">carlossolari@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">12</td>
+            <td campo-dato="nick">Juan Roman</td>
+            <td campo-dato="mail">riquelme@gmail.com</td>
+            <td campo-dato="web">riquelme.org</td>
+            <td campo-dato="twitter">@roman10</td>
+            <td campo-dato="skype">riquelme@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">13</td>
+            <td campo-dato="nick">Carpo</td>
+            <td campo-dato="mail">norbertonapolitano@gmail.com</td>
+            <td campo-dato="web">riff.org</td>
+            <td campo-dato="twitter">@pappo</td>
+            <td campo-dato="skype">norbertonapolitano@gmail.com</td>
+        </tr>
+        <tr>
+            <td campo-dato="id">14</td>
+            <td campo-dato="nick">Cuchi</td>
+            <td campo-dato="mail">gustavoleguizamon@gmail.com</td>
+            <td campo-dato="web">cuchileguizamon.org</td>
+            <td campo-dato="twitter">@cuchileguizamon</td>
+            <td campo-dato="skype">cuchileguizamon@gmail.com</td>
+        </tr>
+    </table>
+    <footer>
+        Footer
+    </footer>
+</body>
+</html>

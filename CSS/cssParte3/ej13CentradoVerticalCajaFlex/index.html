@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centrado vertical Caja Flex</title>
+    <style>
+        html, body
+        {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contenedor
+        {
+            width: 90%;
+            background-color: lavender;
+            display: flex;
+            min-height: 100%;
+            margin: auto;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        img
+        {
+            display: block;
+            margin: 5px;
+            height: 230px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <img src="./yaguarete.jpeg" alt="Yaguarete">
+        <img src="./yaguarete.jpeg" alt="Yaguarete">
+        <img src="./yaguarete.jpeg" alt="Yaguarete">
+        <img src="./yaguarete.jpeg" alt="Yaguarete">
+        <!-- <img src="./yaguarete.jpeg" alt="Yaguarete"> -->
+    </div>
+</body>
+</html>

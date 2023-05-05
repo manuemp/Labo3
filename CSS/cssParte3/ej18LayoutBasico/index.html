@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Basico</title>
+    <style>
+        html, body
+        {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header
+        {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 15%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #333;
+            color: white;
+        }
+
+        h1
+        {
+            margin: 0;
+        }
+
+        p
+        {
+            font-size: 1.7em;
+        }
+
+        main
+        {
+            height: 75%;
+            width: 100%;
+            background-color: tomato;
+            display:flex;
+            position: relative;
+        }
+
+        #barraLateral
+        {
+            width: 15%;
+            height: 100%;
+            background: linear-gradient(180deg, crimson, red);
+            color: white;
+            padding: 0px 15px;
+            text-align: center;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        #menu
+        {
+            list-style: none;
+            width: 80%;
+            margin: auto;
+            padding: 0;
+        }
+
+        #menu a
+        {
+            display: block;
+            background-color: ghostwhite;
+            padding: 20px 0px 20px 0px;
+            box-sizing: border-box;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid white;
+        }
+
+        #menu a:hover
+        {
+            transition: 1s;
+            background-color: lavender;
+        }
+
+        #contenido
+        {
+            width: 85%;
+            height: 100%;
+            background-color: lavender;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        footer
+        {
+            position: relative;
+            height: 10%;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 800px)
+        {
+            #menu
+            {
+                width: 100%;
+            }
+
+            #barraLateral
+            {
+                padding: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Título principal de página 1</h1>
+    </header>
+    <main>
+        <div id="barraLateral">
+            <p>Menu</p>
+
+            <ul id="menu">
+                <li>
+                    <a href="../../../HTML/index.html">HTML</a>
+                </li>
+                <li>
+                    <a href="../../../CSS/index.html">CSS</a>
+                </li>
+                <li>
+                    <a href="#JS">JSCRIPT</a>
+                </li>
+                <li>
+                    <a href="#PHP">PHP</a>
+                </li>
+            </ul>
+        </div>
+        <div id="contenido">
+            El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>
+            El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>
+            El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>
+            <br><br><br>
+            El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>
+            El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>
+            El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>
+            <br><br><br>
+            El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>
+            El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>
+            El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>El contenido puede crecer indefinidamente agrandando el div <br>
+        </div>
+    </main>
+    <footer>
+        <h1>Pie de página</h1>
+    </footer>
+</body>
+</html>

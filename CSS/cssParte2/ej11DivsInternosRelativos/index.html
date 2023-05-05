@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs Internos Relativos</title>
+    <style>
+        html, body
+        {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        h1
+        {
+            color: rgb(71,121,119);
+            margin: 0;
+        }
+
+        body
+        {
+            background-color: rgb(71,121,119);
+        }
+        
+        .contenedor
+        {
+            background-color:rgb(175,213,199);
+            width: 90%;
+            height: 100%;
+            display: block;
+            margin: auto;
+        }
+
+        .contenedor1
+        {
+            position: relative;
+            display: block;
+            width: 80%;
+            height: 80px;
+            margin-top: 10px;
+            /* background-color: rgb(41,50,65); */
+            background: linear-gradient(90deg, rgb(41,50,65), black);
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 1.4em;
+        }
+
+        .contenedor2
+        {
+            padding: 10px;
+            box-sizing: border-box;
+            width: 50%;
+            margin-left: 20%;
+            height: auto;
+            margin-top: 40px;
+            background-color: rgb(151,193,217);
+            font-size: 1.2em;
+        }
+
+        .contenedor3
+        {
+            overflow: auto;
+            height: 125px;
+            margin-left: 30%;
+            background-color: rgb(255,183,5);
+            margin-top: 20px;
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 1.2em;
+        }
+
+        img
+        {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .modal
+        {
+            position: fixed;
+            top: 25%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            background-color: rgba(90, 117, 144, 0.5);
+            z-index: 1;
+            display: block;
+            margin: auto;
+            border-radius: 10px;
+            padding: 40px;
+            box-sizing: border-box;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Contenedores Relativos</h1>
+        <div class="contenedor1">Contenedor relativo Clase 1</div>
+        <div class="contenedor1">Contenedor relativo Clase 1</div>
+
+        <div class="contenedor2">Contenedor relativo Clase 2</div>
+        <div class="contenedor2">
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2
+        </div>
+
+        <div class="contenedor3">
+            Contenedor relativo Clase 3 <br>
+            Texto texto texto texto <br>
+            texto texto texto texto <br>
+            texto texto texto texto <br>
+            texto texto texto texto <br>
+            texto texto texto texto <br>
+            texto texto texto texto <br>
+            texto texto texto texto <br>
+            texto texto texto texto
+        </div>
+
+        <div class="contenedor2">
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2 <br>
+            Contenedor relativo Clase 2
+        </div>
+
+        <div class="contenedor2">
+            <img src="./bianchi.jpeg" alt="Carlos Bianchi">
+        </div>
+
+        <div class="modal">
+            Contenedor Modal <br>
+            Contenedor Modal <br>
+            Contenedor Modal <br>
+            Contenedor Modal <br>
+            Contenedor Modal <br>
+            Contenedor Modal <br>
+            Contenedor Modal <br>
+            Contenedor Modal <br>
+            Contenedor Modal <br>
+            Contenedor Modal
+        </div>
+
+    </div>
+</body>
+</html>

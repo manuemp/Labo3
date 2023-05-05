@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs En Pila</title>
+    <style>
+        body, html
+        {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            color: #333;
+        }
+        h1
+        {
+            color: Crimson;
+            margin: 0;
+        }
+
+        .contenedor
+        {
+            background-color: #feb49b;
+            width: 85%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .caja{
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            height: 200px;
+            width: 50%;
+            border: 1px solid black;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+        #div1
+        {
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: lightgray;
+            box-shadow: 8px 5px 1px rgba(160, 160, 160, 0.5);
+        }
+        #div2
+        {
+            text-align: center;
+            background: radial-gradient(tomato, crimson, hotpink);
+        }
+        #div3
+        {
+            background: linear-gradient(45deg, tomato, crimson, pink);
+        }
+        #div3 img
+        {
+            max-height: 100%;
+            max-width: 100%;
+            margin: auto;
+            display: block;
+        }
+        #div4
+        {
+            padding: 20px;
+            text-align: left;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, pink, crimson, tomato);
+            box-shadow: 8px 5px 1px rgba(160, 160, 160, 0.5);
+        }
+        #div5
+        {
+            background: linear-gradient(205deg, pink, crimson, tomato);
+        }
+
+        @media (min-width: 600px) and (max-width: 1080px)
+        {
+            #div1
+            {
+                background-color: rgb(255, 255, 149);
+            }
+        }
+
+        @media (max-width: 600px)
+        {
+            #div1
+            {
+                background-color: lightblue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Cajas en Pila</h1>
+            <div class="caja" id="div1">
+                Fondo gris para tamaños de viewport mayores a 1080 <br>
+                Fondo amarillo claro para tamaño de viewport entre 600 y 1080 <br>
+                Fondo celeste para tamaño de viewport menor a 600
+            </div>
+            <div class="caja" id="div2">
+                Gradiente radial como fondo
+            </div>
+            <div class="caja" id="div3">
+                <img src="./charlygustavo.jpeg" alt="Charly Garcia y Gustavo Cerati">
+            </div>
+            <div class="caja" id="div4">
+                Nodo de texto en div4 alineado a la izquierda y con padding
+            </div>
+            <div class="caja" id="div5">
+                Nodo de texto en div4 alineado a la izquierda y sin padding
+                
+            </div>
+    </div>
+</body>
+</html>

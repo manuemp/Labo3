@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs Internos Absolutos</title>
+    <style>
+        html, body
+        {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .contenedor 
+        {
+            position: relative;
+            width: 90vw;
+            height: 90vw;
+            display: block;
+            background-color:#33AB5F;
+            margin: auto;
+        }
+
+        h3
+        {
+            margin: 0;
+        }
+
+        .div1
+        {
+            top: 10%;
+            left: 10%;
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background-color:#D5F591;
+            overflow: auto;
+        }
+
+        .div2
+        {
+            position: absolute;
+            top: 50%;
+            left: 60%;
+            width: 30%;
+            height: 30%;
+            background-color: #831e62;
+            transform: rotateZ(10deg);
+            overflow: auto;
+        }
+
+        .div3
+        {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            width: 45%;
+            height: 30%;
+            background-color: rgba(191,168,187, 0.8);
+            overflow: auto;
+        }
+
+        .imagen
+        {
+            float: left;
+            max-width: 30%;
+            height: auto;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h3>Estructura de posicionamiento absoluto pero adaptable al medio de presentación</h3>
+        <div class="div1">
+            <h3>Contenedor Interno 1</h3>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia dolor debitis quisquam consequatur quam ipsum atque voluptates ullam quis? 
+        </div>
+
+        
+        <div class="div2">
+            <h3>Contenedor Interno 2</h3>
+            <img class="imagen" src="./charles.jpeg" alt="Charly Garcia">
+            <img class="imagen" src="./charles.jpeg" alt="Charly Garcia">
+            <img class="imagen" src="./charles.jpeg" alt="Charly Garcia">
+            <img class="imagen" src="./charles.jpeg" alt="Charly Garcia">
+        </div>
+
+        <div class="div3">
+            <h3>Contenedor Interno 3</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quia veniam tempore praesentium! 
+        </div>
+
+    </div>
+</body>
+</html>
