@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con Inputs</title>
+</head>
+<body>
+    <h2>Introducir un valor en el cuadro de texto y luego pulsar el botón para ejecutar el procedimiento correspondiente</h2>
+   <input type="text" id="x">
+   <button id="muestraValor">Muestra Valor</button>
+   <button id="suma1">Suma 1</button>
+   <button id="elevarCuadrado">x**2</button>
+   <button id="multiplicar">Multiplica * 2</button>
+   <button id="elevarX">2**x</button>
+</body>
+</html>
+
+<script>
+    var x = document.getElementById("x");
+    var muestraValor = document.getElementById("muestraValor");
+    var suma1 = document.getElementById("suma1");
+    var elevarCuadrado = document.getElementById("elevarCuadrado");
+    var multiplicar = document.getElementById("multiplicar");
+    var elevarX = document.getElementById("elevarX");
+
+    muestraValor.onclick = function(){
+        alert(x.value);
+    }
+
+    suma1.onclick = function(){
+        x.value = parseInt(x.value) + 1;
+    }
+
+    elevarCuadrado.onclick = function(){
+        x.value = parseInt(x.value) ** 2;
+    }
+
+    multiplicar.onclick = function(){
+        x.value = parseInt(x.value) * 2;
+    }
+
+    elevarX.onclick = function(){
+        x.value = 2 ** parseInt(x.value);
+    }
+</script>

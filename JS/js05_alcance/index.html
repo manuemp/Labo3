@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alcance</title>
+    <style>
+        button
+        {
+            width: 300px;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="boton1()" title="Inicializa variable global desde dentro de la función con declaración var">Inicialización incorrecta</button>
+    <button onclick="boton2()" title="Inicializa variable global desde dentro de la función sin declaración var">Inicialización correcta</button>
+    <button onclick="boton3()">Muestra variable global</button>
+</html>
+
+<script>
+
+    var variableGlobal;
+
+    function boton1()
+    {
+        var variable;
+        variable = prompt("Ingrese valor para la variable global: ");
+        alert("El valor de la variableGlobal es: " + variable);
+        alert("El tipo de variableGlobal es:" + typeof variable);
+    }
+
+    function boton2()
+    {
+        variableGlobal = prompt("Ingrese valor para la variable global: ");
+        alert("El valor de la variableGlobal es: " + variableGlobal);
+        alert("El tipo de variableGlobal es:" + typeof variableGlobal);
+    }
+
+    function boton3()
+    {
+        if(typeof variableGlobal == "undefined")
+        {
+            alert("La variable global no ha sido asignada");
+        }
+        else
+        {
+            alert("Valor de la variableGlobal: " +  variableGlobal);
+            alert("El tipo de variableGlobal es:" + typeof variableGlobal);
+        }
+    }
+</script>

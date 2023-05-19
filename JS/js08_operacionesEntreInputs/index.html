@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones Entre Inputs</title>
+    <style>
+
+        body
+        {
+            background-color: rgb(233, 230, 250);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        h3
+        {
+            text-align: center;
+            color: crimson;
+        }
+
+        #contenedor
+        {
+            border-radius: 10px;
+            display:block;
+            width: 400px;
+            height: 250px;
+            background: linear-gradient(90deg, black, #334);
+            margin: auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #datos, #comandos
+        {
+            width: 100%;
+            /* background-color: white; */
+        }
+
+        #datos td
+        {
+            width: 50%;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        #datos input
+        {
+            width: 95%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        #comandos td
+        {
+            width: 33%;
+        }
+
+        #comandos button{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #datos input:focus
+        {
+            background-color: rgb(202, 224, 247);
+        }
+
+        #resultado
+        {
+            color: crimson;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>Introducir un valor en los cuadros de texto y luego pulsar un boton para ejecutar la función correspondiente</h3>
+    <div id="contenedor">
+        <table id="datos">
+            <tr>
+                <td>Entrada 1:</td>
+                <td><input type="text" id="1"></td>
+            </tr>
+            <tr>
+                <td>Entrada 2:</td>
+                <td><input type="text" id="2"></td>
+            </tr>
+            <tr>
+                <td>Entrada 3:</td>
+                <td><input type="text" id="3"></td>
+            </tr>
+            <tr>
+                <td>Resultado:</td>
+                <td><input type="text" readonly id="resultado"></td>
+            </tr>
+        </table>
+        <br>
+        <table id="comandos">
+            <tr>
+                <td><button id="sumar">Sumar</button></td>
+                <td><button id="promedio">Promedio</button></td>
+                <td><button id="max">Máximo</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
+<script>
+
+    var suma = document.getElementById("sumar");
+    var promedio = document.getElementById("promedio");
+    var max = document.getElementById("max");
+    var resultado = document.getElementById("resultado");
+
+    var uno = document.getElementById("1");
+    var dos = document.getElementById("2");
+    var tres = document.getElementById("3");
+
+    suma.onclick = function()
+    {
+        resultado.value = parseInt(uno.value) + parseInt(dos.value) + parseInt(tres.value);
+    }
+
+    promedio.onclick = function()
+    {
+        resultado.value = (parseInt(uno.value) + parseInt(dos.value) + parseInt(tres.value)) / 3;
+    }
+
+    max.onclick = function()
+    {
+        if (parseInt(uno.value) >= parseInt(dos.value))
+        {
+            if(parseInt(uno.value) >= parseInt(tres.value))
+            {
+                resultado.value = uno.value;
+            }
+            else
+            {
+                resultado.value = tres.value;
+            }
+        }
+        else if(parseInt(dos.value) >= parseInt(uno.value))
+        {
+            if(parseInt(dos.value) >= parseInt(tres.value))
+            {
+                resultado.value = dos.value;
+            }
+            else
+            {
+                resultado.value = tres.value
+            }
+        }
+    }
+
+</script>

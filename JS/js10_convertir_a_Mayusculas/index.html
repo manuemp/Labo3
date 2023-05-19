@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertir a Mayúsculas</title>
+    <style>
+        body
+        {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background: linear-gradient(90deg, black, #334)
+        }
+
+        h2
+        {
+            color: white;
+            text-align: center;
+        }
+
+        #contenedor
+        {
+            position: absolute;
+            left: 38%;
+            top: 10%;
+            height: content;
+            border-radius: 20px;
+            padding: 20px 100px;
+            width: fit-content;
+            margin: auto;
+            background: linear-gradient(90deg, lavender, lightblue);
+            box-shadow: 5px 8px 13px 0px black;
+        }
+
+        #contenedor input{
+            display: block;
+            margin: 10px auto;
+            padding: 5px;
+            box-sizing: border-box;
+            color: crimson;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Convertir a Mayúsculas</h2>
+    <div id="contenedor">
+        <label for="nomnbre">Nombre:</label>
+        <input type="text" id="nombre" autocomplete="off">
+        <br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" autocomplete="off">
+    </div>
+</body>
+</html>
+
+<script>
+   var nombre = document.getElementById("nombre");
+   
+   nombre.onblur = function()
+   {
+        nombre.value = nombre.value.toUpperCase();
+   }
+
+   apellido.onblur = function()
+   {
+        apellido.value = apellido.value.toUpperCase();
+   }
+
+
+
+</script>
