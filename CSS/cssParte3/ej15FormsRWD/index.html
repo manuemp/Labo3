@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form RWD</title>
+    <style>
+        html, body
+        {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        header, footer
+        {
+            position: relative;
+            width: 100%;
+            height: 15%;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2, h3
+        {
+            margin: 0;
+        }
+
+        main
+        {
+            position: relative;
+            width: 100%;
+            height: 70%;
+            background-color: lavender;
+            float: left;
+            overflow: auto;
+        }
+
+        .opcion
+        {
+            width: 20%;
+            height: 150px;
+            border: 1px solid white;
+            float:left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .opcion input, select
+        {
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 1200px)
+        {
+            .opcion
+            {
+                width: 33.3%;
+            }
+        }
+
+        @media (max-width: 700px)
+        {
+            .opcion
+            {
+                width: 100%;
+            }
+        }
+
+        .acciones
+        {
+            display: flex;
+            width: 100%;
+            height: 70px;
+            background-color: rgb(200, 200, 255);
+            position: relative;
+            top: 55px;
+            justify-content:space-evenly;
+            align-items: center;
+        }
+
+        .acciones button
+        {
+            width: 30%;
+            height: 50px;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Formulario</h2>
+    </header>
+    <main>
+        <form action="respuestaFormulario.html" method="get">
+            <div class="opcion">
+                <label style="font-weight: bold;" for="apellido">1. Apellido:</label><br/>
+                <input type="text" id="apellido" name="apellido" value="" autofocus="autofocus" required>
+            </div>
+            <div class="opcion">
+                <label style="font-weight: bold;" for="apellido">2. Nombres:</label><br/>
+                <input type="text" id="nombre" name="nombre" value="" autofocus="autofocus" required>
+            </div>
+
+            <div class="opcion">
+                <label style="font-weight: bold;" for="contraseña">3. Contraseña:</label><br/>
+                <input type="password" id="contraseña" name="contraseña" value="" required>
+            </div>
+
+            <div class="opcion">
+                <label style="font-weight: bold;" for="deshabilitado">4. Campo Deshabilitado:</label><br/>
+                <input type="text" id="deshabilitado" name="deshabilitado" value="Valor Deshabilitado" disabled>
+            </div>
+
+            <div class="opcion">
+                <label style="font-weight: bold;" for="fecha">5. Fecha y Hora:</label><br/>
+                <input type="date" id="fecha" name="fecha">
+                <input type="time" id="hora" name="hora">
+            </div>
+
+            <div class="opcion">
+                <label for="dni">6. DNI:</label><br>
+                <input type="number" name="dni" id="dni">
+            </div>
+
+            <div class="opcion">
+                <label>7. Actividades Extracurriculares: </label><br>
+                <input type="checkbox" name="musica">Música <br>
+                <input type="checkbox" name="pintura">Pintura Artística
+            </div>
+
+            <div class="opcion">
+                <label for="sexo">8. Sexo:</label><br>
+                <input type="radio" name="sexo" value="masculino" checked="checked">Masculino <br>
+                <input type="radio" name="sexo" value="femenino">Femenino
+            </div>
+
+            <div class="opcion">
+                <h3>9. Vacío</h3>
+            </div>
+
+            <div class="opcion">
+                <label for="estudios">10. Estudios Cursados: </label><br/>
+                <select name="Estudios" id="estudios">
+                    <option value="pri" selected="selected">Primarios</option>
+                    <option value="sec">Secundarios</option>
+                    <option value="ter">Terciarios</option>
+                    <option value="uni">Universitarios</option>
+                    <option value="pos">Postgrado</option>
+                </select>
+            </div>
+
+            <div class="opcion">
+                <label for="area">11. Area de Desempeño: </label><br/>
+                <select name="area" id="area">
+                    <option value="administracion" selected="selected">Administración</option>
+                    <option value="contabilidad">Contabilidad</option>
+                    <option value="sistemas">Sistemas</option>
+                    <option value="otra">Otra</option>
+                    <option value="no_trabaja">No trabaja</option>
+                </select>
+            </div>
+
+            <div class="opcion">
+                <label for="turno">12. Turno: </label><br/>
+                <select name="turno" id="turno">
+                    <option value="M" selected="selected">Mañana</option>
+                    <option value="T">Tarde</option>
+                    <option value="N">Noche</option>
+                    <option value="ninguno">Ninguno</option>
+                </select>
+            </div>
+
+            <div class="opcion">
+                <label for="conduce">13. Conduce:</label><br>
+                <input type="radio" name="conduce" value="si" checked="checked">Sí <br>
+                <input type="radio" name="conduce" value="no">No
+            </div>
+
+            <div class="acciones">
+                <button type="submit">Enviar</button>
+                <button type="reset">Resetear</button>
+            </div>
+
+        </form>
+    </main>
+    <footer>
+        <h2>Pie de Formulario</h2>
+    </footer>
+</body>
+</html>
