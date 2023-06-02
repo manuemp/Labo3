@@ -22,7 +22,7 @@
         {
             position: absolute;
             left: 38%;
-            top: 10%;
+            top: 80px;
             height: content;
             border-radius: 20px;
             padding: 20px 100px;
@@ -59,12 +59,12 @@
 <script>
    var nombre = document.getElementById("nombre");
    
-   nombre.onblur = function()
+   nombre.onchange = function()
    {
         nombre.value = nombre.value.toUpperCase();
    }
 
-   apellido.onblur = function()
+   apellido.onchange = function()
    {
         apellido.value = apellido.value.toUpperCase();
    }
