@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion Input</title>
+    <style>
+                body, html
+        {
+            padding: 0;
+            margin: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;    
+        }
+
+        #divformulario
+        {
+            display: block;
+            margin: 100px auto;
+            background: linear-gradient(90deg, white, whitesmoke);
+            width: 70%;
+            height: 400px;
+            border-radius: 20px;
+            box-shadow: 3px 0px 16px 0px lightgray;
+        }
+
+        form input
+        {
+            display: block;
+            padding: 6px;
+            margin: 10px auto;
+            width: 200px;
+            border: 2px solid dodgerblue;
+            border-radius: 20px;
+
+        }
+
+        form
+        {
+            display:block ;
+            padding: 10%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .boton
+        {
+            display: inline-block;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid dodgerblue;
+            background-color: rgb(218, 235, 252);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="divformulario">
+        <form id="formulario" method="get" action="./respuestaFormulario.html">
+            <label for="dia">Día del Mes:</label><br>
+            <input type="number" id="dia" required autocomplete="off" name="dia"><br>
+            <label for="mes">Mes:</label><br>
+            <input type="number" id="mes" required autocomplete="off" name="mes"><br>
+            <button type="reset" class="boton" id="reset">Resetear</button>
+            <button type="submit" class="boton" id="enviar">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+
+    var dia = document.getElementById("dia");
+    var mes = document.getElementById("mes");
+    var formulario = document.getElementById("formulario");
+
+    function validarMes(){
+        if(mes.value < 1 || mes.value > 12)
+        {
+            alert("Los valores de los meses deben estar entre 1 y 12");
+            mes.value = "";
+        }
+    }
+
+    function validarDia(){
+        if(dia.value < 1 || dia.value > 31)
+        {
+            alert("Los valores de los meses deben estar entre 1 y 12");
+            dia.value = "";
+        }
+    }
+
+    mes.onkeyup = validarMes;
+    mes.onchange = validarMes;
+    dia.onkeyup = validarDia;
+    dia.onchange = validarDia;
+
+
+</script>

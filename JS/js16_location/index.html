@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+</head>
+<body>
+    <button id="youtube">Youtube</button>
+    <button id="spotify">Spotify</button>
+    <button id="google">Google</button>
+</body>
+</html>
+
+<script>
+
+    var youtube = document.getElementById("youtube");
+    var spotify = document.getElementById("spotify");
+    var google = document.getElementById("google");
+
+    youtube.onclick = function()
+    {
+        location.href = "http://www.youtube.com";
+    }
+
+    spotify.onclick = function()
+    {
+        location.href = "http://www.spotify.com"
+    }
+
+    google.onclick = function(){
+        location.href = "http://www.google.com";
+    }
+
+</script>

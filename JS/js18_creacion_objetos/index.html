@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creacion de Objetos</title>
+    <style>
+        #contenedor{
+            width: 650px;
+            height: 300px;
+            background-color: limegreen;
+            display: block;
+            margin: 200px auto;
+            overflow: auto;
+            padding: 10px; 
+            box-sizing: border-box;
+        }
+        .elementoCreado{
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button id="crear">Crear</button>
+    <button id="limpiar">Limpiar</button>
+    <button id="info">Info</button>
+
+    <div id="contenedor"></div>
+
+</body>
+</html>
+
+<script>
+
+    var crear = document.getElementById("crear");
+    var limpiar = document.getElementById("limpiar");
+    var info = document.getElementById("info");
+    var contenedor = document.getElementById("contenedor");
+
+    crear.onclick = function()
+    {
+        var objDiv = document.createElement("div");
+        var texto = "<h2>Elemento creado: " + contenedor.childNodes.length + "</h1>";
+        objDiv.innerHTML = texto;
+        objDiv.className = "elementoCreado";
+        contenedor.appendChild(objDiv);
+    }
+
+    info.onclick = function()
+    {
+        if(contenedor.childNodes.length == 0)
+        {
+            alert("La longitud del arreglo es 0");
+        }
+        else
+        {
+            alert("La longitud del arreglo es: " + contenedor.childNodes.length);
+            for(var i = 0 ; i < contenedor.childNodes.length ; i++)
+            {
+                alert("Indice: " + i + ", InnerHTML: " + contenedor.childNodes[i].innerHTML);
+            }
+        }
+    }
+
+    limpiar.onclick = function()
+    {
+        while(contenedor.childNodes.length > 0)
+        {
+            contenedor.removeChild(contenedor.childNodes[0]);
+        }
+    }
+
+</script>
