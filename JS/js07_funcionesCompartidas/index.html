@@ -193,8 +193,11 @@
 
     suma.onclick = function()
     {
-        acumulador += parseInt(input.value);
-        input.value = "";
+        if(input.value != "")
+        {
+            acumulador += parseInt(input.value);
+            input.value = "";
+        }
     }
 
 </script>
