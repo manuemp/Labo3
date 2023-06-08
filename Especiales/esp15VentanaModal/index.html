@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Modal</title>
+    <style>
+
+        body, html
+        {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        #contenedor
+        {
+            background-color: orange;
+            width: 100%;
+            height: 100%;
+        }
+
+        #ventanaModal
+        {
+            height: 350px;
+            width: 600px;
+            background-color: lavender;
+            display: none;
+            margin: auto;
+            position: fixed;
+            top: 10%;
+            left: 30%;
+        }
+
+        h3
+        {
+            margin: 0;
+        }
+
+        #headerForm, #footerForm
+        {
+            width: 100%;
+            height: 10%;
+            background-color: darkslateblue;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+
+        #mainForm
+        {
+            height: 70%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #titulo
+        {
+            background-color: black;
+            color: white;
+            height: 10%;
+            width: 100%;
+            padding-left: 10px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #salir
+        {
+            color: red;
+            font-weight: bold;
+            background-color: #333;
+            height: 100%;
+            width: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .opcion
+        {
+            float: left;
+            height: 30%;
+            width: 50%;
+        }
+
+        .inp
+        {
+            display: block;
+            width: 200px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        button
+        {
+            padding: 5px;
+        }
+
+        .modalActivado
+        {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .modalDesactivado
+        {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <button id="boton">Modal</button>
+    </div>
+
+    <div id="ventanaModal">
+        <div id="titulo">
+            Ventana Modal
+            <div id="salir">
+                X
+            </div>
+        </div>
+        <div id="headerForm">
+            <h3>Formulario Alta Afiliados</h3>
+        </div>
+        <div  id="mainForm">
+            <div class="opcion">
+                <label for="nombre">Nombre: </label>
+                <input type="text" id="nombre" name="nombre" class="inp">
+            </div>
+
+            <div class="opcion">
+                <label for="apellido">Apellido: </label>
+                <input type="text" id="apellido" name="apellido" class="inp">
+            </div>
+
+            <div class="opcion">
+                <label for="dni">DNI: </label>
+                <input type="number" id="dni" name="dni" class="inp">
+            </div>
+
+            <div class="opcion">
+                <label for="sexo">Sexo:</label><br>
+                <input type="radio" name="sexo" value="M" checked>Masculino
+                <input type="radio" name="sexo" value="F">Femenino
+            </div>
+
+            <div class="opcion">
+                <label for="fecha">Fecha de Alta:</label>
+                <input type="date" id="fecha" class="inp">
+            </div>
+
+            <div class="opcion">
+                <label for="deportes">Deporte: </label>
+                <select id="deportes" class="inp">
+                </select>
+            </div>
+
+            <button>Enviar</button>
+
+        </div>
+
+        <div id="footerForm">
+            <h3>Footer del Formulario</h3>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script src="../jquery.js"></script>
+<script>
+    var jsonDeportes = '{"deportes":[{"nombre":"Fútbol", "sigla":"F"}, {"nombre":"Rugby", "sigla":"R"}, {"nombre":"Tenis", "sigla":"T"}, {"nombre":"Natación", "sigla":"N"}, {"nombre":"Handball", "sigla":"H"}]}';
+    var objDeportes = JSON.parse(jsonDeportes);
+    var deportes = document.getElementById("deportes");
+
+    objDeportes.deportes.forEach(opc => {
+        var opcion = document.createElement("option");
+        opcion.setAttribute("value", opc.nombre);
+        opcion.innerText = opc.nombre;
+        deportes.appendChild(opcion);
+    });
+
+    $("#boton").click(function(){
+        document.getElementById("contenedor").className = "modalActivado";
+        $("#ventanaModal").show();
+    });
+
+    $("#salir").click(function(){
+        document.getElementById("contenedor").className = "modalDesactivado";
+        $("#ventanaModal").hide();
+    });
+
+</script>
