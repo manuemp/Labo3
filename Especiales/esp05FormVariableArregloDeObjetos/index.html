@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Arreglo de Objetos JSON</title>
+    <style>
+        html, body
+        {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        header, footer
+        {
+            position: relative;
+            width: 100%;
+            height: 15%;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2, h3
+        {
+            margin: 0;
+        }
+
+        main
+        {
+            position: relative;
+            width: 100%;
+            height: 70%;
+            background-color: lavender;
+            float: left;
+            overflow: auto;
+        }
+
+        .opcion
+        {
+            width: 50%;
+            height: 150px;
+            float:left;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .inp
+        {
+            padding: 10px;
+            margin-top: 5px;
+            width: 400px;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 1200px)
+        {
+            main
+            {
+                display: flex;
+                justify-content: center;
+            }
+            .opcion
+            {
+                width: 40%;
+            }
+            .inp
+            {
+                width: 230px;
+            }
+        }
+
+        @media (max-width: 700px)
+        {
+            .opcion
+            {
+                width: 100%;
+            }
+            .inp
+            {
+                width: 400px;
+            }
+
+        }
+
+        .acciones
+        {
+            display: flex;
+            width: 100%;
+            height: 70px;
+            background-color: rgb(200, 200, 255);
+            position: relative;
+            top: 55px;
+            justify-content:space-evenly;
+            align-items: center;
+        }
+
+        .acciones button
+        {
+            width: 30%;
+            height: 50px;
+            font-size: 24px;
+        }
+
+        label
+        {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Formulario para Alta - Club de Deportes</h2>
+    </header>
+    <main>
+        <form action="respuestaFormulario.html" method="get">
+            <div class="opcion">
+                <label for="apellido">1. Apellido:</label><br/>
+                <input type="text" id="apellido" name="apellido" value="" autofocus="autofocus"  class="inp" required>
+            </div>
+            <div class="opcion">
+                <label for="apellido">2. Nombres:</label><br/>
+                <input type="text" id="nombre" name="nombre" value="" autofocus="autofocus"  class="inp" required>
+            </div>
+
+            <div class="opcion">
+                <label for="dni">3. DNI:</label><br>
+                <input type="number" name="dni"  class="inp" id="dni">
+            </div>
+
+            <div class="opcion">
+                <label for="sexo">4. Sexo:</label><br>
+                <input type="radio" name="sexo" value="masculino" checked="checked"><label>Masculino</label><br>
+                <input type="radio" name="sexo" value="femenino"><label>Femenino</label>
+            </div>
+
+            <div class="opcion">
+                <label for="fecha">5. Fecha de Alta:</label><br/>
+                <input type="date" id="fecha"  class="inp" name="fecha">
+            </div>
+
+            <div class="opcion">
+                <label for="deportes">6. Deporte Elegido: </label><br/>
+                <select name="deportes" id="deportes" class="inp">
+
+                </select>
+            </div>
+
+            <div class="acciones">
+                <button type="submit">Enviar</button>
+                <button type="reset">Resetear</button>
+            </div>
+
+        </form>
+    </main>
+    <footer>
+        <h2>Pie de Formulario</h2>
+    </footer>
+</body>
+</html>
+
+<script>
+    // var jsonDeportes = '{"deportes":[{"apellido": "Pedro", "nombre":"Manuel", "dni":"40742089", "sexo":"M", "fechaAlta":"1/1/2020", "deporte":"Futbol"}]}';
+    var jsonDeportes = '{"deportes":[{"nombre":"Fútbol", "sigla":"F"}, {"nombre":"Rugby", "sigla":"R"}, {"nombre":"Tenis", "sigla":"T"}, {"nombre":"Natación", "sigla":"N"}, {"nombre":"Handball", "sigla":"H"}]}';
+    var objDeportes = JSON.parse(jsonDeportes);
+    var deportes = document.getElementById("deportes");
+
+    objDeportes.deportes.forEach(opc => {
+        var opcion = document.createElement("option");
+        opcion.setAttribute("value", opc.nombre);
+        opcion.innerText = opc.nombre;
+        deportes.appendChild(opcion);
+    });
+
+    
+</script>
