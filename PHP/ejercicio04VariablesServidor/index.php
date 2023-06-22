@@ -45,6 +45,7 @@
 
         echo "<h2>Variables del Requerimiento</h2>";
         echo "<table>";
+        
         echo "<tr><td>" . "SCRIPT_NAME" . "</td>";
         echo "<td>" . $_SERVER["SCRIPT_NAME"] . "</td></tr>";
         echo "<tr><td>" . "SERVER_ADDR" . "</td>";

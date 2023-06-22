@@ -25,7 +25,6 @@
         $objRenglonPedido2->nombre = "Javier";
         $objRenglonPedido2->apellido = "Malosetti";
         $objRenglonPedido2->nacimiento = "26/11/1965";
-
         $renglonesPedido = [];
         array_push($renglonesPedido, $objRenglonPedido);
         array_push($renglonesPedido, $objRenglonPedido2);

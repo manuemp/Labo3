@@ -35,11 +35,10 @@
             echo "<td>" . $persona["Apellido"] . "</td>";
             echo "<td>" . $persona["Nacimiento"] . "</td>";
             echo "</tr>";
-        }
+        }   
         echo "</table>";
 
         echo "<h2>La longitud de los arreglos es: " . count($arrayAsociativo[0]) . "<h2>";
-
     ?>
 </body>
 </html>
