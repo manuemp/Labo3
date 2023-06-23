@@ -115,7 +115,6 @@
             data: {clave: $("#clave").val()},
             success: function(respuestaDelServer, estado)
             {
-                console.log(respuestaDelServer);
                 $("#resultado").removeClass("recibiendo");
                 $("#resultado").html("<h2>Respuesta del servidor</h2>" + respuestaDelServer);
                 $("#estado").empty();
