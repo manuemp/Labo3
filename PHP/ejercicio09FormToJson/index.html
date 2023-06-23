@@ -175,7 +175,7 @@
         {
             $("#respuesta").empty();
             $("#respuesta").html("<h4><i>Cargando...</i><h4>");
-    
+
             $.ajax({
                 type:"post",
                 url: "./respuesta.php",
@@ -189,7 +189,6 @@
                 {
                     $("#respuesta").empty();
                     $("#respuesta").html("<h4>Respuesta del Servidor</h4>" + respuestaDelServer);
-    
                 }
             });
         }
