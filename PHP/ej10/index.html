@@ -41,9 +41,16 @@
             box-sizing: border-box;
             display: flex;
             align-items: center;
-            justify-content: center;
+            /* justify-content: center; */
+            justify-content: end;
             position: relative;
         }
+
+        /* #botones
+        {
+            position: fixed;
+            right: 20px;
+        } */
 
         footer
         {
@@ -149,12 +156,6 @@
             }
         } */
 
-        #botones
-        {
-            position: fixed;
-            right: 20px;
-        }
-
         #botones button
         {
             padding: 10px;
@@ -190,7 +191,7 @@
             width: 50%;
         }
 
-        thead input, select
+        thead input, thead select
         {
             display: block;
             width: 80%;
@@ -203,6 +204,75 @@
         {
             padding: 5px;
         }
+
+        .boton
+        {
+            display: block;
+            margin: auto;
+        }
+
+        .modalVisible
+        {
+            visibility: visible;
+        }
+
+        .modalInvisible
+        {
+            visibility: hidden;
+        }
+
+        #modalModif
+        {
+            position: fixed;
+            top: 20%;
+            left: 30%;
+            padding: 20px;
+            z-index: 10;
+            width: 40%;
+        }
+
+        #formModalModif
+        {
+            width: 100%;
+            background-color: black;
+            display: flex;
+            flex-wrap: wrap;
+            color: white;
+        }
+        .entrada
+        {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .entrada input, .entrada select
+        {
+            display: block;
+            /* margin: auto; */
+            width: 150px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .encabezado
+        {
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            align-items: center;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        #salirModif
+        {
+            cursor: pointer;
+            color: red;
+        }
  
     </style>
 </head>
@@ -210,7 +280,6 @@
     <div id="contenedor">
         <header>
             <div id="botones">
-                
                 <input type="text" readonly id="orden" value="Precio">
                 <button id="cargar">Cargar</button>
                 <button id="vaciar">Vaciar</button>
@@ -224,30 +293,68 @@
                     <th campo-dato="modelo" class="th" id="thModelo">Modelo</th>
                     <th campo-dato="precio" class="th" id="thPrecio">Precio</th>
                     <th campo-dato="año" class="th" id="thAño">Año</th>
+                    <th campo-dato="año" class="th" id="thAño">PDF</th>
+                    <th campo-dato="año" class="th" id="thAño">Modificaciones</th>
+                    <th campo-dato="año" class="th" id="thAño">Bajas</th>
                 </tr>
                 <tr>
                     <td campo-dato="id" class="th"  ><input id="filtroId" type="text"></td>
-                    <td campo-dato="marca" class="th"  >
-                        <select id="filtroMarca">
-                            <option value="">Todas</option>
-                        </select>
-                    </td>
+                    <!-- <td campo-dato="marca" class="th"  ><input id="filtroMarca" type="text"></td> -->
+                    <td campo-dato="marca" class="th"  ><select name="filtroMarca" id="filtroMarca"></select></td>
                     <td campo-dato="modelo" class="th" ><input  id="filtroModelo" type="text"></td>
                     <td campo-dato="precio" class="th" ><input id="filtroPrecio" type="text"></td>
                     <td campo-dato="año" class="th" ><input id="filtroFecha" type="text"></td>
+                    <td campo-dato="año" class="th"></td> <!--CAMBIAR-->
+                    <td campo-dato="año" class="th"></td> <!--CAMBIAR-->
+                    <td campo-dato="año" class="th"></td> <!--CAMBIAR-->
                 </tr>
-
             </thead>
             <tbody id="tabla">
     
             </tbody>
         </table>
-        <footer id="footer">
+        <footer>
             Footer
         </footer>
 
         
     </div>
+
+    <div id="modalModif" class="modalInvisible">
+        <div class="encabezado">
+            <div>Formulario modificar</div>
+            <button id="salirModif">X</button>
+        </div>
+        <form action="./modificar.php" id="formModalModif" method="post">
+            <div class="entrada">
+                <label for="idModif">ID: </label>
+                <input type="text" id="idModif" name="idModif">
+            </div>
+            <div class="entrada">
+                <label for="marcaModif">Marca: </label>
+                <select name="marcaModif" id="marcaModif" name="marcaModif"></select>
+            </div>
+            <div class="entrada">
+                <label for="modeloModif">Modelo: </label>
+                <input type="text" id="modeloModif" name="modeloModif">
+            </div>
+            <div class="entrada">
+                <label for="precioModif">Precio: </label>
+                <input type="text" id="precioModif" name="precioModif"> 
+            </div>
+            <div class="entrada">
+                <label for="añoModif">Año: </label>
+                <input type="text" id="añoModif" name="fechaModif">
+            </div>
+            <div class="entrada"></div>
+            <div class="entrada">
+                <input type="button" value="Modificar" id="enviarModif">
+                <!-- <input type="submit" value="Resetear"> -->
+            </div>
+        </form>
+    </div>
+
+    <!-- //////////////////////////////////////////////////////// -->
 
 </body>
 </html>
@@ -255,37 +362,78 @@
 <script src="../jquery.js"></script>
 
 <script>
-    var jsonDeportes = '{"deportes":[{"nombre":"Fútbol", "sigla":"F"}, {"nombre":"Rugby", "sigla":"R"}, {"nombre":"Tenis", "sigla":"T"}, {"nombre":"Natación", "sigla":"N"}, {"nombre":"Handball", "sigla":"H"}]}';
-    var objDeportes = JSON.parse(jsonDeportes);
-    var deportes = document.getElementById("deportes");
-    var flag = 0;
-
 
     function cargarDesplegable()
     {
         var desplegable = $("#filtroMarca");
+        var desplegableModif = $("#marcaModif");
 
         $.ajax({
             type: "get",
             url:"./marcas.php",
             success: function(respuestaServer)
             {
-                alert(respuestaServer);
+                // alert(respuestaServer);
                 var objRespuesta = JSON.parse(respuestaServer);
-                objRespuesta.marcas.forEach(marca => {
-                    //Hay que hacerlo en options diferentes, sino no funciona
+                objRespuesta.forEach(respuesta => {
                     var opcion = document.createElement("option");
-                    opcion.innerHTML = marca.nombreMarca;
+                    opcion.innerHTML = respuesta;
                     desplegable.append(opcion);
+                    desplegableModif.append(opcion);
                 });
             }
             });
     }
 
+    function cargarModif(codArt)
+    {
+        $.ajax({
+                type: "get",
+                url: "./salidaJsonArticulo.php",
+                data: { codArt: codArt },
+                success: function (respuestaDelServer) {
+                    objetoDato = JSON.parse(respuestaDelServer);
+                    $("#idModif").val(objetoDato.codArt);
+                    $("#marcaModif").val(objetoDato.marca);
+                    $("#modeloModif").val(objetoDato.modelo);
+                    $("#precioModif").val(objetoDato.precio);
+                    $("#añoModif").val(objetoDato.fecha);
+                }
+            });
+    }
+
+    function modificar()
+    {
+        // var data = new FormData(document.getElementById("formModalModif"));
+        $.ajax({
+            type: "post",
+            // method: "post",
+            enctype: "multipart/form-data",
+            url: "./modificar.php",
+            // processData: false,
+            // contentType: false,
+            // cache: false,
+            data: {
+                id: $("#idModif").val(),
+                marca: $("#marcaModif").val(),
+                modelo: $("#modeloModif").val(),
+                precio: $("#precioModif").val(),
+                fecha: $("#añoModif").val()
+            },
+            success: function(respuesta)
+            {
+                console.log(respuesta);
+                $("#modalModif").hide();
+            }
+        })
+
+    }
+
+    $("#enviarModif").click(modificar);
+
+
     $(document).ready(function(){
         
-        cargarDesplegable();
-
         $("#thId").click(function(){
             $("#orden").val("ID");
         });
@@ -306,8 +454,14 @@
             $("#orden").val("Fecha");
         });
 
+        $("#salirModif").click(function(){
+            document.getElementById("modalModif").className = "modalInvisible";
+        });
+
+        cargarDesplegable();
+
+
         $("#cargar").click(function(){
-            console.log("cargando...");
             $("#tabla").empty();
             $("#tabla").html("<h3><i>Cargando datos...</i></h3>");
 
@@ -323,7 +477,7 @@
                         fecha: $("#filtroFecha").val()
                     },
                 success: function(respuestaServer){
-                    alert(respuestaServer);
+                    // alert(respuestaServer);
                     $("#tabla").empty();
                     var objJson = JSON.parse(respuestaServer);
                     objJson.guitarras.forEach(function(valor, indice)
@@ -331,11 +485,14 @@
                         
                         var objTr = document.createElement("tr");
                         var tdId = document.createElement("td");
-
                         var tdMarca = document.createElement("td");
                         var tdModelo = document.createElement("td");
                         var tdPrecio = document.createElement("td");
                         var tdAño = document.createElement("td");
+                        var tdPDF = document.createElement("td");
+                        var tdModif = document.createElement("td");
+                        var tdBaja = document.createElement("td");
+
                         tdId.innerHTML = valor.id;
                         objTr.appendChild(tdId);
                         tdMarca.innerHTML = valor.marca;
@@ -346,11 +503,39 @@
                         objTr.appendChild(tdPrecio);
                         tdAño.innerHTML = valor.año;
                         objTr.appendChild(tdAño);
+
+                        tdPDF.innerHTML = "<button class='boton' campo-dato='PDF'>PDF</button>";
+                        objTr.appendChild(tdPDF);
+                        tdModif.innerHTML = `<button class='boton' campo-dato='Modif'>Modificar</button>`;
+                        objTr.appendChild(tdModif);
+                        tdBaja.innerHTML = `<button class='boton' campo-dato='Baja'>Baja</button>`;
+                        objTr.appendChild(tdBaja);
+                        
+
+                        tdPDF.onclick = function(){
+                            console.log(valor.id);
+                            //Mostrar PDF
+                        }
+
+                        tdModif.onclick = function()
+                        {
+                            //Bloquear contenedor
+                            //Hacer visible formulario de modificacion
+                            document.getElementById("modalModif").className = "modalVisible";
+                            //Traer con ajax los datos para el select
+                            cargarModif(valor.id);
+                            //Llenar formulario con funcion
+                            //modificar(valor.id);
+
+                        }
+
+                        tdBaja.onclick = function()
+                        {
+                            //Ajax para un php que elimine pasando como argumento el id
+                        }
+                        
                         $("#tabla").append(objTr);
                     });
-
-                    $("#footer").html("Cantidad de registros: " + objJson.largo);
-
                 }
             })
 
@@ -362,4 +547,7 @@
         })
 
     });
+
+
+
 </script>
