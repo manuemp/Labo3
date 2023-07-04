@@ -296,14 +296,20 @@
 
         @media (max-width: 1024px)
         {
-            .botonHeader
+            /* .botonHeader
             {
                 max-width: 70px;
-            }
+            } */
         }        
 
         @media (max-width: 900px)
         {
+
+            .botonHeader
+            {
+                width: 130px;
+            }
+
             [campo-dato = "año"]
             {
                 display: none;
@@ -327,7 +333,10 @@
 
         @media(max-width: 750px) 
         {
-            
+            .botonHeader
+            {
+                max-width: 70px;
+            }
 
             [campo-dato = "precio"]
             {
@@ -400,21 +409,6 @@
 
         @media (max-width: 550px)
         {
-            [campo-dato = "id"], [campo-dato = "modelo"], [campo-dato = "modif"], [campo-dato = "baja"]
-            {
-                max-width: 20vw;
-            }
-
-            [campo-dato = "PDF"]
-            {
-                display: none;
-            }
-
-
-        }
-
-        @media (max-width: 450px)
-        {
 
             #opciones
             {
@@ -435,6 +429,29 @@
             {
                 height: 100px;
             }
+
+            [campo-dato = "id"], [campo-dato = "modelo"], [campo-dato = "modif"], [campo-dato = "baja"]
+            {
+                max-width: 20vw;
+            }
+
+            [campo-dato = "PDF"]
+            {
+                display: none;
+            }
+
+
+        }
+
+        @media (max-width: 450px)
+        {
+
+            .botonHeader
+            {
+                max-width: 60px;
+                font-size: 11px;
+            }
+
 
             [campo-dato = "id"]
             {
@@ -457,9 +474,10 @@
                     <input type="text" readonly id="orden" value="Precio">
                 </div>
                 <div>
-                    <button class="botonHeader" id="cargar">Cargar</button>
-                    <button class="botonHeader" id="alta">Alta</button>
-                    <button class="botonHeader" id="vaciar">Vaciar</button>
+                    <button class="botonHeader" id="cargar">Cargar Datos</button>
+                    <button class="botonHeader" id="alta">Alta Registro</button>
+                    <button class="botonHeader" id="vaciar">Vaciar Tabla</button>
+                    <button class="botonHeader" id="vaciarFiltros">Borrar Filtros</button>
                 </div>
             </div>
         </header>
@@ -549,7 +567,7 @@
         <form id="formModalAlta" method="post" enctype="multipart/form-data">
             <div class="entrada">
                 <label for="idAlta">ID: </label>
-                <input type="text" id="idAlta" name="idAlta" placeholder="Patron: AAA000" pattern="[A-Za-z]{3}[0-9]{3}">
+                <input type="text" id="idAlta" name="idAlta" placeholder="Patron: AAA000" pattern="[A-Za-z]{3}[0-9]{3}" required>
             </div>
             <div class="entrada">
                 <label for="marcaAlta">Marca: </label>
@@ -714,7 +732,8 @@
             data: {codArt: $codArt},
             success: function(respuesta)
             {
-                alert(respuesta);
+                document.getElementById("modalRespuesta").className = "ModalVisible";
+                document.getElementById("textoRespuesta").innerHTML = respuesta;
             }
         });
     }
@@ -829,7 +848,10 @@
                         }
                         tdBaja.onclick = function()
                         {
-                            baja(valor.id);
+                            if(confirm("¿Está seguro de dar de baja el artículo?"))
+                            {
+                                baja(valor.id);
+                            }
                         }      
                         $("#tabla").append(objTr);
                     });
@@ -852,6 +874,16 @@
                 habilitarModif();
             }
         );
+
+        $("#vaciarFiltros").click(function()
+        {
+            $("#filtroId").val("");
+            $("#filtroMarca").val("");
+            $("#filtroModelo").val("");
+            $("#filtroPrecio").val("");
+            $("#filtroFecha").val("");
+            $("#orden").val("Precio");
+        });
 
         $("#thId").click(function(){
             $("#orden").val("ID");
@@ -895,9 +927,21 @@
 
         });
 
-        $("#enviarAlta").click(alta);
+        $("#enviarAlta").click(function()
+        {
+            if(confirm("¿Está seguro de querer realizar el alta?"))
+            {
+                alta();
+            }
+        });
 
-        $("#enviarModif").click(modificar);
+        $("#enviarModif").click(function()
+        {
+            if(confirm("¿Está seguro de querer modificar el artículo?"))
+            {
+                modificar();
+            }
+        });
 
         $("#cargar").click(function(){
             $("#tabla").empty();
