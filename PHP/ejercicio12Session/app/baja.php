@@ -1,6 +1,6 @@
 <?php
 
-    include("../verificacion.php");
+    include("./verificacion.php");
 
     $dbname = "bqaqedrgszmaxzzry3xb";
     $host= "bqaqedrgszmaxzzry3xb-mysql.services.clever-cloud.com";
