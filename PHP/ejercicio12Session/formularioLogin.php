@@ -89,6 +89,7 @@
     </style>
 </head>
 <body>
+    
     <div id="nav"><a href="./formularioRegistro.html">Registrarse</a></div>
     <h1>Inicio de sesión</h1>
     <div id="loginForm">
@@ -97,7 +98,6 @@
             <input type="text" id="user" name="user" placeholder="Ingrese nombre de usuario" required>
             <label for="user">Contraseña: </label>
             <input type="password" id="pass" name="pass" placeholder="Ingrese contraseña" required>
-            <!-- <input type="submit" value="Enviar" class="boton"> -->
             <button class="boton">Enviar</button>
         </form>
     </div>

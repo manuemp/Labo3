@@ -8,6 +8,7 @@
     $password= "DzvwoTvBsMNPFIDxncts";
     $respuesta_estado = "";
     
+    
     if(isset($_POST["codArt"]))
     {  
         try

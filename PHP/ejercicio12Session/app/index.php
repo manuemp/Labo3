@@ -617,6 +617,7 @@
 
     function cargarDesplegable()
     {
+        
         var desplegable = $("#filtroMarca");
         var desplegableModif = $("#marcaModif");
         var desplegableAlta = $("#marcaAlta");
@@ -624,6 +625,7 @@
         $.ajax({
             type: "get",
             url:"./marcas.php",
+            data: { autenticacion: ""},
             success: function(respuestaServer)
             {
                 alert(respuestaServer);
@@ -663,6 +665,24 @@
                     $("#añoModif").val(objetoDato.fecha);
                 }
             });
+    }
+
+    function mostrarDatosUsuario()
+    {
+        $.ajax({
+            type: "get",
+            url: "./datosUsuario.php",
+            data: { 
+                //Esto es solamente para enviar un dato en $_GET y así evitar
+                //que se pueda acceder a datosUsuario.php desde url
+                autenticacion: "" 
+            },
+            success: function(respuestaServer)
+            {
+                var objJson = JSON.parse(respuestaServer);
+                alert("Datos del Usuario \n\nUsuario: " + objJson["usuario"] + "\nID de Sesion: " + objJson["idSesion"] + "\nContador de sesiones: " + objJson["contador"]);
+            }
+        })
     }
 
     function modificar(){
@@ -859,6 +879,7 @@
 
     $(document).ready(function(){
         cargarDesplegable();
+        mostrarDatosUsuario();
 
         $("#formModalAlta").keyup(function()
             {

@@ -1,45 +1,41 @@
-<?php
+<?php 
 
     include("./verificacion.php");
+
     $dbname = "bqaqedrgszmaxzzry3xb";
     $host= "bqaqedrgszmaxzzry3xb-mysql.services.clever-cloud.com";
     $user= "ussg4ckvxuovpsxj";
     $password= "DzvwoTvBsMNPFIDxncts";
     $respuesta_estado = "";
-    
+
     if(isset($_GET["autenticacion"]))
     {
         try
         {
             $dsn = "mysql:host=$host;dbname=$dbname";
             $dbh = new PDO($dsn, $user, $password);
+            $user = $_SESSION['usuario'];
     
-            $sql = "SELECT * FROM Marcas";
+            $sql = "SELECT Usuario, Contador FROM Usuarios WHERE Usuario = :user";
             $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(":user", $user);
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $stmt->execute();
+            $fila = $stmt->fetch();
     
-            $arrayMarcas = [];
-            $objMarcas = new stdClass;
+            $objUsuario = new stdClass;
+            $objUsuario->usuario = $fila["Usuario"];
+            $objUsuario->idSesion = $_SESSION["identificador"];
+            $objUsuario->contador = $fila["Contador"];
     
-            while($fila = $stmt->fetch())
-            {
-                $objMarca = new stdClass;
-                $objMarca->id = $fila["ID"];
-                $objMarca->nombreMarca = $fila["Marca"];
-                array_push($arrayMarcas, $objMarca);
-            }
-    
-            $objMarcas->marcas = $arrayMarcas;
-            $objMarcas->largo = count($arrayMarcas);
-            $jsonMarcas = json_encode($objMarcas);
-    
-            echo $jsonMarcas;
+            $objJson = json_encode($objUsuario);
             $dbh = null;
+    
+            echo $objJson;
+    
         }
-        catch (PDOException $e)
+        catch(PDOException $e)
         {
-            
             echo $e->getMessage();
         }
     }
@@ -47,5 +43,4 @@
     {
         header("Location:./index.php");
     }
-
 ?>

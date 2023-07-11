@@ -28,7 +28,7 @@
         #registroForm
         {
             width: 300px;
-            background: linear-gradient(180deg, #333, black);
+            background: linear-gradient(180deg, slategray, black);
             color: white;
             display: block;
             margin: 80px auto;
@@ -77,34 +77,12 @@
     <div id="nav"><a href="./formularioLogin.php">Ir a Login</a></div>
     <h1>Crear Usuario</h1>
     <div id="registroForm">
-        <form method="post">
+        <form method="post" action="./altaUsuario.php">
             <label for="user">Usuario: </label>
             <input type="text" id="user" name="user" placeholder="Ingrese nombre de usuario" required>
             <label for="user">Contraseña: </label>
             <input type="password" id="pass" name="pass" placeholder="Ingrese contraseña" required>
-            <!-- <input type="button" id="enviarRegistro" value="enviar"> -->
             <button id="enviarRegistro" class="boton">Enviar</button>
         </form>
     </div>
 </body>
-
-<script src="../jquery.js"></script>
-<script>
-    function crearUsuario()
-    {
-        $.ajax({
-            type: "post",
-            url: "./altaUsuario.php",
-            data: {
-                username: $("#user").val(),
-                pass: $("#pass").val()
-            },
-            success: function(respuestaServer)
-            {
-                alert(respuestaServer);
-            }
-        })
-    }
-    $("#enviarRegistro").click(crearUsuario);
-</script>
-</html>

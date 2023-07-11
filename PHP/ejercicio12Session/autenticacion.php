@@ -20,7 +20,6 @@
             $sql = "SELECT * FROM Usuarios WHERE Usuario = :user";
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':user', $usuario);
-            // $stmt->execute(array(":user"=>$usuario));
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $fila = $stmt->fetchAll();
@@ -29,19 +28,28 @@
             {
                 if($hashedPass == $fila[0]["Pass"])
                 {
+                    //Actualizo contador de sesión
+                    $sql = "UPDATE Usuarios SET Contador = Contador + 1 WHERE Usuario = :user";
+                    $stmt = $dbh->prepare($sql);
+                    $stmt->bindParam(':user', $usuario);
+                    $stmt->execute();
                     session_start();
-                    $_SESSION['usuario'] = $usuario;
+                    $_SESSION["usuario"] = $usuario;
+                    $_SESSION["identificador"] = session_create_id();
                     header("Location:./app/index.php");
+                    $dbh = null;
                     exit();
                 }
                 else
                 {
-                    echo "Contraseña incorrecta";
                     header("Location:./formularioLogin.php");
+                    $dbh = null;
+                    exit();
                 }
             }
-
             header("Location:./formularioLogin.php");
+            $dbh = null;
+            exit();
 
         }
         catch(PDOException $e)
@@ -52,5 +60,6 @@
     else
     {
         header("Location:./formularioLogin.php");
+        exit();
     }
 ?>

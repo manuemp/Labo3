@@ -7,6 +7,7 @@
     $password= "DzvwoTvBsMNPFIDxncts";
     $respuesta_estado = "";
 
+    
     if(isset($_POST["idAlta"]))
     {
             try

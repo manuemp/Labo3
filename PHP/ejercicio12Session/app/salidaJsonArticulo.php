@@ -8,6 +8,7 @@
 
     if(isset($_GET["codArt"]))
     {
+        
         try {
             $dsn = "mysql:host=$host;dbname=$dbname"; 
             $dbh = new PDO($dsn, $user, $password);

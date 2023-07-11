@@ -1,6 +1,6 @@
 <?php 
 
-    include("./verificacion.php");
+    // include("./verificacion.php");
 
     $dbname = "bqaqedrgszmaxzzry3xb";
     $host= "bqaqedrgszmaxzzry3xb-mysql.services.clever-cloud.com";
@@ -8,25 +8,32 @@
     $password= "DzvwoTvBsMNPFIDxncts";
     $respuesta_estado = "";
 
-    try
+    if(isset($_POST["user"]))
     {
-        $dsn = "mysql:host=$host;dbname=$dbname";
-        $dbh = new PDO($dsn, $user, $password);
-        $usuario = $_POST["username"];
-        $pass = md5($_POST["pass"]);
-
-        $sql = "INSERT INTO Usuarios (Usuario, Pass) VALUES (:user, :pass)";
-        $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':user', $usuario);
-        $stmt->bindParam(':pass', $pass);
-        $stmt->execute();
-
-        echo "Registro exitoso";
-
+        try
+        {
+            $dsn = "mysql:host=$host;dbname=$dbname";
+            $dbh = new PDO($dsn, $user, $password);
+            $usuario = $_POST["user"];
+            $contador = 0;
+            $pass = md5($_POST["pass"]);
+    
+            $sql = "INSERT INTO Usuarios (Usuario, Pass, Contador) VALUES (:user, :pass, 0)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':user', $usuario);
+            $stmt->bindParam(':pass', $pass);
+            $stmt->execute();
+            $dbh = null;
+            header("Location:./formularioLogin.php");
+        }
+        catch(PDOException $e)
+        {
+            echo $e->getMessage();
+        }
     }
-    catch(PDOException $e)
+    else
     {
-        echo $e->getMessage();
+        header("Location:./index.php");
     }
 
 ?>
